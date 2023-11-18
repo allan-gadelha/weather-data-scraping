@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from msedge.selenium_tools import Edge, EdgeOptions
 from selenium.webdriver.common.alert import Alert
 import pandas as pd
-from formating_text import list_of_first_words
+from formating_text import list_of_first_words, list_of_first_words_2
 
 # Create a new instance of the Edge driver in InPrivate mode
 path = r"C:/Users/deimo/Desktop/Global_Weather/msedgedriver.exe"
@@ -35,7 +35,8 @@ country_urls = {}
 no_result_countries = []
 
 # Iterate over the list of country names
-for country in list_of_first_words:
+#Changing to list_of_first_2 to run the code again on the country that didn't get a result on first try
+for country in list_of_first_words_2:
     # Click on the search form
     search_form = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#search-form-header > span')))
     driver.execute_script("arguments[0].click();", search_form)   # Use JavaScript to click
@@ -62,7 +63,7 @@ for country in list_of_first_words:
         country_urls[country] = url
 
         # Save the dictionary to a text file
-        with open('country_urls.txt', 'w') as file:
+        with open('country_urls_2.txt', 'w') as file:
            file.write(json.dumps(country_urls))
 
         #Print the country name and URL for debug
@@ -73,7 +74,7 @@ for country in list_of_first_words:
         no_result_countries.append(country)
         
         #Saving the country that didn't have a result
-        with open('no_result_country.txt', 'w') as file:
+        with open('no_result_country.txt_2', 'w') as file:
             file.write(json.dumps(no_result_countries))
 
         continue
