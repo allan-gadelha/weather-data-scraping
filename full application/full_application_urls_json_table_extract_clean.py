@@ -108,7 +108,7 @@ def clean_temperature(df, column):
     df[column] += ')'
     
     # Extract the numeric values from the column
-    df[column] = df[column].str.extract(r'\(([0-9\.]*)\) °F', expand=False)
+    df[column] = df[column].str.extract(r'\((-?[0-9\.]*)\) °F', expand=False)
     
     return df
 
@@ -129,4 +129,4 @@ for column in columns_to_clean:
 completed_data = clean_precipitation(completed_data, 'Precipitation / Rainfall mm (in)')
 
 # Save the completed_data DataFrame to a CSV file
-completed_data.to_csv(f"C:/Users/deimo/Desktop/weather-data-scrapping/full application/full_continent_extract_clean_UTF-8.csv", index=False, encoding='UTF-8', sep=';')
+completed_data.to_csv(f"C:/Users/deimo/Desktop/weather-data-scrapping/full application/full_continent_corrected_UTF-8.csv", index=False, encoding='UTF-8', sep=';')
