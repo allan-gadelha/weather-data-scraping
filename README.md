@@ -46,7 +46,7 @@ To get started with the project, follow these steps:
 3. **Run Scripts and Notebooks:**
     - Run `scripts/extract_urls.py` to perform the initial scraping and obtain city URLs.
     
-    - Run `scripts/extract_urls.py` to perform the secondary scraping, extracting and cleaning weather data.
+    - Run `scripts/extract_clean_data.py` to perform the secondary scraping, extracting and cleaning weather data.
 
     - Explore and analyze the extracted data using `notebooks/analysis.ipynb`.
 
