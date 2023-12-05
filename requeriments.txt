@@ -12,3 +12,6 @@ pprint==0.1.0
 
 # Json5 is used for JSON parsing
 json5==0.9.6
+
+# Matplotlib is used for data visualization
+matplotlib==3.4.3
