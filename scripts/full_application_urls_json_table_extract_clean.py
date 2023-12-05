@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import json
 
-with open(r'C:\Users\deimo\Desktop\weather-data-scrapping\full application\full_continents_url.json', 'r') as file:
+with open(r'C:\Users\deimo\Desktop\weather-data-scrapping\data\full_continents_url.json', 'r') as file:
     continents_urls = json.load(file)
 
 # Create a new instance of the Edge driver
@@ -129,4 +129,4 @@ for column in columns_to_clean:
 completed_data = clean_precipitation(completed_data, 'Precipitation / Rainfall mm (in)')
 
 # Save the completed_data DataFrame to a CSV file
-completed_data.to_csv(f"C:/Users/deimo/Desktop/weather-data-scrapping/full application/full_continent_corrected_UTF-8.csv", index=False, encoding='UTF-8', sep=';')
+completed_data.to_csv(f"data/full_continent_corrected_UTF-8.csv", index=False, encoding='UTF-8', sep=';')

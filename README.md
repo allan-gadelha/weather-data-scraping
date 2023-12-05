@@ -1,49 +1,67 @@
-# weather-data-scrapping
- Data Scraping using Python, Selenium, BeautifulSoup and Pandas
+# Weather Data Scraping Project
 
-Project Overview
+## Overview
 
-The Weather Data Scrapping Project is an initiative dedicated to obtaining comprehensive weather data from the website Climate Data (https://en.climate-data.org/). The project focuses on a span of 30 years, from 1991 to 2021, to gather valuable insights into weather patterns for 350 destinations worldwide.
+This project focuses on scraping comprehensive weather data from the website Climate Data (https://en.climate-data.org/). The objective is to gather insights into weather patterns for 350 destinations worldwide over a 30-year span (1991-2021). As of recent updates the new dataset contains data from 3,833 destinations from 6 Continents.
 
-Objectives
-Data Source: Exclusively extract weather data from Climate Data to ensure consistency and reliability across all destinations.
+## Project Structure
 
-Variable Focus: Concentrate on five key weather variables: Min. Temperature, Max. Temperature, Precipitation/Rainfall, Average Sun Hours, and Rainy Days.
+The project is organized as follows:
 
-Temporal Scope: Cover a span of 30 years (1991-2021) to capture long-term weather trends and variations.
+- **`data/`**: Contains data files generated during the scraping and cleaning process.
+  - `full_continents_url.json`: JSON file with URLs for each city, organized by continent, country, and city.
 
-Dataset Format: Compile the acquired weather data into a structured CSV/Excel format, emphasizing the selected variables and maintaining clarity for easy analysis.
+  - `full_continent_corrected_UTF-8.csv`: Cleaned CSV file with weather data for 3,833 destinations, including Min. Temperature, Max. Temperature, Precipitation/Rainfall, Average Sun Hours, Rainy Days, and more.
 
-Selected Variables
+- **`notebooks/`**: Contains Jupyter notebooks for analysis.
+  - `analysis.ipynb`: Notebook for analyzing the extracted and cleaned weather data.
 
-The project specifically collects and compiles data for the following weather variables:
+- **`scripts/`**: Contains Python scripts for web scraping and data processing.
+  - `full_application_continent_country_city_url_extract.py`: Initial scraping to obtain URLs for each city, organized in a nested dictionary format (`full_continents_url.json`).
 
-Min. Temperature: Recorded in both Celsius (°C) and Fahrenheit (°F).
+  - `full_application_urls_json_table_extract_clean.py`: Secondary scraping to access the URLs and extract data from tables. The extracted data includes weather variables such as Min. Temperature, Max. Temperature, Precipitation/Rainfall, Average Sun Hours, Rainy Days, and more. The output is a cleaned CSV file (`full_continent_corrected_UTF-8.csv`). An older version is also available as `full_continent_extract_clean_UTF-8.csv`.
 
-Max. Temperature: Captured in both Celsius (°C) and Fahrenheit (°F).
+- **`.gitignore`**: File to specify files and directories that should be ignored by version control (e.g., `__pycache__`, `*.pyc`, `*.csv`, etc.).
 
-Precipitation/Rainfall: Measured in millimeters (mm) and inches (in).
+- **`README.md`**: Project documentation.
 
-Average Sun Hours: Calculated in hours, available for the years 1999 to 2019.
+- **`requirements.txt`**: List of Python packages and versions required for the project.
 
-Rainy Days: Representing the number of days with recorded rainfall.
+## Getting Started
 
-Note: Although temperature data is available in both Celsius and Fahrenheit, the client has opted for only Fahrenheit to be included in the final CSV file.
+To get started with the project, follow these steps:
 
-Implementation
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/allan-gadelha/weather-data-scraping.git
+   cd weather-data-scraping
 
-Web Scraping: Utilize web scraping techniques to extract targeted weather data from Climate Data.
+2. **Install Dependencies:**
+    ```bash
+    pip install -r requirementes.txt
+    ```
 
-Data Cleaning: Ensure data consistency and accuracy by handling any missing or inconsistent values.
+3. **Run Scripts and Notebooks:**
+    - Run `scripts/full_application_continent_country_city_url_extract.py` to perform the initial scraping and obtain city URLs.
+    
+    - Run `scripts/full_application_urls_json_table_extract_clean.py` to perform the secondary scraping, extracting and cleaning weather data.
 
-Temporal Range Processing: Filter data within the specified temporal range (1991-2021) to maintain relevancy.
+    - Explore and analyze the extracted data using `notebooks/analysis.ipynb`.
 
-Dataset Compilation: Aggregate the cleaned weather data into a structured CSV/Excel format, focusing on the selected variables.
+4. **Explore Cleaned Data:**
+    - Find the cleaned weather data in the `data/full_continent_corrected_UTF-8.csv` file.
 
-Documentation: Provide comprehensive documentation detailing the data collection methodology, selected variables, and any specific considerations taken during the process.
+## Requeriments
 
-Future Enhancements
+- Selenium
+- BeautifulSoup
+- Pandas
+- Pprint
+- Json
 
-Consider potential future enhancements, such as incorporating real-time updates or expanding the dataset to include additional weather parameters.
+## Contact
 
-The Weather Data Scrapping Project aims to deliver a high-quality dataset that meets the client's specifications, offering valuable insights into the selected weather variables for 350 destinations over a span of 30 years.
+For any questions or issues, feel free to contact the project owner:
+
+- Email: [Allan Gadelha](mailto:c.allan.gadelha@gmail.com)
+- GitHub: [Allan Gadelha](https://github.com/allan-gadelha)

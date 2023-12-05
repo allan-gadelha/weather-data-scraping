@@ -103,7 +103,7 @@ pp = pprint.PrettyPrinter(indent=4)
 # Use it to print your dictionary
 pp.pprint(continents)
 
-with open('full application/full_continents_url.json.json', 'w') as f:
+with open('data/full_continents_url.json', 'w') as f:
     # Use json.dump to write the dictionary to the file
     json.dump(continents, f)
 
