@@ -11,15 +11,17 @@ The project is organized as follows:
 - **`data/`**: Contains data files generated during the scraping and cleaning process.
   - `full_continents_url.json`: JSON file with URLs for each city, organized by continent, country, and city.
 
-  - `full_continent_corrected_UTF-8.csv`: Cleaned CSV file with weather data for 3,833 destinations, including Min. Temperature, Max. Temperature, Precipitation/Rainfall, Average Sun Hours, Rainy Days, and more.
+  - `corrected_data.csv`: Cleaned CSV file with weather data for 3,833 destinations, including Min. Temperature, Max. Temperature, Precipitation/Rainfall, Average Sun Hours, Rainy Days, and more.
+
+  - `extract_clean_data.csv`: Old CSV file version without any negative temperature values.
 
 - **`notebooks/`**: Contains Jupyter notebooks for analysis.
   - `analysis.ipynb`: Notebook for analyzing the extracted and cleaned weather data.
 
 - **`scripts/`**: Contains Python scripts for web scraping and data processing.
-  - `full_application_continent_country_city_url_extract.py`: Initial scraping to obtain URLs for each city, organized in a nested dictionary format (`full_continents_url.json`).
+  - `extract_urls.py`: Initial scraping to obtain URLs for each city, organized in a nested dictionary format (`full_continents_url.json`).
 
-  - `full_application_urls_json_table_extract_clean.py`: Secondary scraping to access the URLs and extract data from tables. The extracted data includes weather variables such as Min. Temperature, Max. Temperature, Precipitation/Rainfall, Average Sun Hours, Rainy Days, and more. The output is a cleaned CSV file (`full_continent_corrected_UTF-8.csv`). An older version is also available as `full_continent_extract_clean_UTF-8.csv`.
+  - `extract_clean_data.py`: Secondary scraping to access the URLs and extract data from tables. The extracted data includes weather variables such as Min. Temperature, Max. Temperature, Precipitation/Rainfall, Average Sun Hours, Rainy Days, and more. The output is a cleaned CSV file (`corrected_data-8.csv`). An older version is also available as `extract_clean_data.csv`.
 
 - **`.gitignore`**: File to specify files and directories that should be ignored by version control (e.g., `__pycache__`, `*.pyc`, `*.csv`, etc.).
 
@@ -42,14 +44,14 @@ To get started with the project, follow these steps:
     ```
 
 3. **Run Scripts and Notebooks:**
-    - Run `scripts/full_application_continent_country_city_url_extract.py` to perform the initial scraping and obtain city URLs.
+    - Run `scripts/extract_urls.py` to perform the initial scraping and obtain city URLs.
     
-    - Run `scripts/full_application_urls_json_table_extract_clean.py` to perform the secondary scraping, extracting and cleaning weather data.
+    - Run `scripts/extract_urls.py` to perform the secondary scraping, extracting and cleaning weather data.
 
     - Explore and analyze the extracted data using `notebooks/analysis.ipynb`.
 
 4. **Explore Cleaned Data:**
-    - Find the cleaned weather data in the `data/full_continent_corrected_UTF-8.csv` file.
+    - Find the cleaned weather data in the `data/corrected_data.csv` file.
 
 ## Requeriments
 

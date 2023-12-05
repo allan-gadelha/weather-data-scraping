@@ -129,4 +129,4 @@ for column in columns_to_clean:
 completed_data = clean_precipitation(completed_data, 'Precipitation / Rainfall mm (in)')
 
 # Save the completed_data DataFrame to a CSV file
-completed_data.to_csv(f"data/full_continent_corrected_UTF-8.csv", index=False, encoding='UTF-8', sep=';')
+completed_data.to_csv(f"data/corrected_data.csv", index=False, encoding='UTF-8', sep=';')
